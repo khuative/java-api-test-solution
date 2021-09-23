@@ -19,7 +19,7 @@ We have a collection of users and we wish to create a micro service that will pe
 
 # Database Configuration
 
-I have used MYSQl server all tyou need to fo is add **dbServer** to your Hosts file on your machine. For example db server can point to Localhost/127.0.0.1 or IP address where your database is hosted
+I have used MYSQl server all you need to do is add **dbServer** to your Hosts file on your machine. For example db server can point to Localhost/127.0.0.1 or IP address where your database is hosted
 
 ```bash
 ./mvnw spring-boot:run
