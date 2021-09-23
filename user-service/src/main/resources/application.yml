@@ -1,0 +1,36 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: USER-SERVICE
+  datasource:
+#    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://dbserver:3306/java_api_test_dev?useSSL=false&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true&autoReconnect=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: developer
+    password: developer@1DB_policy%
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+  zipkin:
+    base-url: http://127.0.0.1:9411/
+  cloud:
+    config:
+      import-check:
+        enabled: false
+
+hystrix:
+  command:
+    fallbackcmd:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 15000 #15 seconds timout for circuit breaker
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
